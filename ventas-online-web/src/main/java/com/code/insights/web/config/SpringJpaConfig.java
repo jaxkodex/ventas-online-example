@@ -23,7 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
  * @author e00309
  */
 @Configuration
-@EnableJpaRepositories("com.encuestas.data.repository")
+@EnableJpaRepositories("com.code.insights.data.repository")
 public class SpringJpaConfig {
     @Value("${data.driver}")
     private String databaseDriver;
@@ -68,7 +68,7 @@ public class SpringJpaConfig {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("com.encuestas.data.model");
+        factory.setPackagesToScan("com.code.insights.data.model");
         factory.setDataSource(dataSource());
         factory.setJpaProperties(hibernateProperties());
         factory.afterPropertiesSet();
